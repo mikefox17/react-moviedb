@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    text-align: center;
+    background-image: linear-gradient(#333, #222);
+    color: white;
+    background-position: cover;
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movies-list {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.movies-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.movies-list li {
+    border: 1px solid #222;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movies-list img {
+    width: 100%;
+}
+
+input {
+    background: transparent;
+    color: white;
+}
+
+.backdrop {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 60%;
+}
+
+.detail-details {
+    background: white;
+    position: relative;
+    z-index: 10;
+    margin-top: 400px;
+    color: #333;
+    display: flex;
+    text-align: left;
+    gap: 20px;
+    padding: 20px;
+}
+
+.detail-poster {
+    position: relative;
+    margin-top: -140px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }

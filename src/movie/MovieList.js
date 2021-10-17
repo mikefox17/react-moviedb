@@ -10,6 +10,7 @@ const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [config, setConfig] = useState({});
 
+    /* api call  */
     const apiCall = async () => {
         try {
             const res = await fetch(API_URL + process.env.REACT_APP_MOVIE_API);
@@ -19,7 +20,7 @@ const MovieList = () => {
             console.error(error);
         }
     };
-
+    //config call processenv
     const configCall = async () => {
         try {
             const res = await fetch(
@@ -31,15 +32,16 @@ const MovieList = () => {
             console.error(error);
         }
     };
-
+    //use effect make calls
     useEffect(() => {
         apiCall();
         configCall();
     }, []);
-
+    //return filter and filter over movies array and map
     return (
         <div>
-            <Filter filter={filter} setFilter={setFilter} />
+            {' '}
+            <Filter setFilter={setFilter} filter={filter} />
             <ul className='movies-list'>
                 {movies
                     .filter(movie =>
@@ -47,8 +49,8 @@ const MovieList = () => {
                     )
                     .map(movie => (
                         <Movie
-                            movie={movie}
                             key={movie.title}
+                            movie={movie}
                             config={config}
                         />
                     ))}

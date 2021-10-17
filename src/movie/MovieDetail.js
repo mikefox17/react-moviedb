@@ -9,9 +9,10 @@ const BACKDROP_SIZE = 'original';
 const POSTER_SIZE = 'w342';
 
 const MovieDetail = () => {
+    /* grab movie id from params set movie state */
     const { id } = useParams();
     const [movie, setMovie] = useState({});
-
+    //call api base plus id plus processenv
     const apiCall = async () => {
         try {
             const res = await fetch(
@@ -24,11 +25,11 @@ const MovieDetail = () => {
             console.error(error);
         }
     };
-
+    //useeffect
     useEffect(() => {
         apiCall();
     }, []);
-
+    //if no movie title return null
     if (!movie.title) return null;
 
     return (
@@ -43,6 +44,7 @@ const MovieDetail = () => {
                     className='detail-poster'
                     src={IMAGE_URL + POSTER_SIZE + movie.poster_path}
                     alt={movie.title + ' Poster'}
+                    ƒ
                 />
                 <div>
                     <h1>{movie.title}</h1>

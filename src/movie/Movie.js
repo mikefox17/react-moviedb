@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Movie = ({ movie, config }) => {
     return (
         <li>
+            {/* link to movie id */}
             <Link to={`/movie/${movie.id}`}>
                 {config.images?.base_url && (
                     <img
